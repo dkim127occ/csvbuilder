@@ -13,5 +13,13 @@ An automated CSV builder built using something that does not resemble Python at 
                    <count>: number of spaces in this row
 
  
-    Example: 
+##Example input file 
+        # single row
         33.670467 -117.908397 33.670192 -117.908001 normal v 21
+        
+        # multiple rows
+        33.670467 -117.908397 33.670192 -117.908001 normal v 21
+        35.670467 -117.908397 33.670192 -117.908001 normal h 10
+
+
+        
