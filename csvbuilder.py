@@ -28,15 +28,15 @@ else:
 
 with open(from_file) as f:
     lines = f.readlines()
-#line = raw_input(">").split(' ')
 line = lines[0].split(' ')
 linenum = 1
 idx = 1
+
 while (line[0] != 'q' or len(line) == 7) and linenum < len(lines):
     lat1, long1, lat2, long2, lot_type, direction, lots = line
     lat1, long1, lat2, long2 = float(lat1), float(long1), float(lat2), float(long2)
     lots = int(lots)
-    if direction.upper() == 'H':
+    if direction.upper() == 'V':
         if lat1 > lat2:
             lat1, lat2 = lat2, lat1
         delta = get_delta(lat1, lat2, lots)    
@@ -54,7 +54,6 @@ while (line[0] != 'q' or len(line) == 7) and linenum < len(lines):
             out_file.write(str(idx) + ',' + lot_type + ',' + str(lat1) + ',' + str(lon) + ',' + str(idx % 2) + '\n')
             lon = lon + delta
             idx = idx + 1
-    #line = raw_input(">").split(' ')
     line = lines[linenum].split(' ')
     linenum = linenum + 1
     
